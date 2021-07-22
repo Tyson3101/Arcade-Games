@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "watch": true,
+    "allowJs": false,
+    "target": "ES6",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "module": "esnext",
+    "isolatedModules": false
+  }
+}

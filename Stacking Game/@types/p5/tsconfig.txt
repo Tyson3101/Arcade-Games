@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "watch": true,
+    "allowJs": false,
+    "target": "ES6",
+    "outDir": "./src"
+  }
+}
