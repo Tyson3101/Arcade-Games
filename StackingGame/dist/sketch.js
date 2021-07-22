@@ -2,7 +2,7 @@
 let blocks = [];
 let currentBlock = 0;
 let blockLength = 3;
-let initalFrameRate = 2;
+let initalFrameRate = 5;
 const score = document.createElement("h1");
 document.body.appendChild(score);
 function setup() {
@@ -33,7 +33,6 @@ function placedBlock() {
     if (currentBlock >= 1) {
         let block = blocks[currentBlock];
         let otherBlock = blocks[currentBlock - 1];
-        console.log(block, otherBlock);
         switch (blockLength) {
             case 3:
                 if (block.x === otherBlock.x)
@@ -59,7 +58,7 @@ function placedBlock() {
                 else {
                     blockLength = 0;
                     block.length = 0;
-                    gameOver();
+                    gameEnd();
                 }
                 break;
             case 2:
@@ -77,7 +76,7 @@ function placedBlock() {
                 else {
                     blockLength = 0;
                     block.length = 0;
-                    gameOver();
+                    gameEnd();
                 }
                 break;
             case 1:
@@ -86,14 +85,14 @@ function placedBlock() {
                 else {
                     blockLength = 0;
                     block.length = 0;
-                    gameOver();
+                    gameEnd();
                 }
                 break;
         }
     }
     currentBlock++;
 }
-function gameOver() {
+function gameEnd() {
     noLoop();
     const btn = document.createElement("button");
     btn.innerText = "Reset";
