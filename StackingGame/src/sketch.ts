@@ -10,7 +10,16 @@ document.body.appendChild(score);
 function setup() {
   frameRate(initalFrameRate);
   createCanvas(520, 600);
-  blocks.push();
+  const btn = document.createElement("button");
+  btn.innerText = "Reset";
+  btn.onclick = () => {
+    currentBlock = 0;
+    blockLength = 3;
+    blocks = [];
+    loop();
+  };
+  btn.style.padding = "1rem";
+  document.body.appendChild(btn);
 }
 
 function draw() {
@@ -86,20 +95,10 @@ function placedBlock() {
         break;
     }
   }
+  if (currentBlock >= 14) return gameEnd();
   currentBlock++;
 }
 
 function gameEnd() {
   noLoop();
-  const btn = document.createElement("button");
-  btn.innerText = "Reset";
-  btn.onclick = () => {
-    currentBlock = 0;
-    blockLength = 3;
-    blocks = [];
-    btn.remove();
-    loop();
-  };
-  btn.style.padding = "1rem";
-  document.body.appendChild(btn);
 }
