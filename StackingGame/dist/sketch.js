@@ -47,6 +47,15 @@ function mousePressed() {
     }
     return false;
 }
+
+function touchStarted() {
+
+ blocks[currentBlock].place();
+ placedBlock();
+ frameRate(initalFrameRate + currentBlock + 1.2);
+
+}
+
 function placedBlock() {
     if (currentBlock >= 1) {
         let block = blocks[currentBlock];
