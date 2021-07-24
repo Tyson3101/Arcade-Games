@@ -39,13 +39,12 @@ function keyPressed() {
     }
 }
 
-function mouseClicked() {
+function touchStarted() {
 
- if(mouseX >=0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
  blocks[currentBlock].place();
  placedBlock();
  frameRate(initalFrameRate + currentBlock + 1.2);
-}
+
 }
 
 function placedBlock() {
