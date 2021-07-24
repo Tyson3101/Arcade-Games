@@ -41,6 +41,16 @@ function keyPressed() {
     placedBlock();
     frameRate(initalFrameRate + currentBlock + 1.2);
   }
+  return false;
+}
+
+function mousePressed() {
+  if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+    blocks[currentBlock].place();
+    placedBlock();
+    frameRate(initalFrameRate + currentBlock + 1.2);
+  }
+  return false;
 }
 
 function placedBlock() {
