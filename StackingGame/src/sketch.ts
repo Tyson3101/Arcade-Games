@@ -41,7 +41,6 @@ function keyPressed() {
     placedBlock();
     frameRate(initalFrameRate + currentBlock + 1.2);
   }
-  return false;
 }
 
 function mousePressed() {
@@ -50,7 +49,6 @@ function mousePressed() {
     placedBlock();
     frameRate(initalFrameRate + currentBlock + 1.2);
   }
-  return false;
 }
 
 function placedBlock() {
