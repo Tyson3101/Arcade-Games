@@ -15,6 +15,7 @@ function setup() {
     blockLength = 3;
     blocks = [];
     loop();
+    btn.blur();
   };
   btn.style.padding = "1rem";
   document.body.appendChild(btn);
