@@ -4,13 +4,12 @@ let blocks: Block[] = [];
 let currentBlock = 0;
 let blockLength = 3;
 let initalFrameRate = 5;
-const score = document.createElement("h1");
-document.body.appendChild(score);
+const score = document.querySelector("h1");
+const btn = document.querySelector("button");
 
 function setup() {
   frameRate(initalFrameRate);
   createCanvas(520, 600);
-  const btn = document.createElement("button");
   btn.innerText = "Reset";
   btn.onclick = () => {
     currentBlock = 0;
@@ -20,7 +19,6 @@ function setup() {
     btn.blur();
   };
   btn.style.padding = "1rem";
-  document.body.appendChild(btn);
 }
 
 function draw() {
@@ -35,7 +33,6 @@ function draw() {
   }
   score.innerText = "Score: " + currentBlock;
 }
-
 function keyPressed() {
   if (key === " ") {
     blocks[currentBlock].place();
@@ -43,7 +40,6 @@ function keyPressed() {
     frameRate(initalFrameRate + currentBlock + 1.2);
   }
 }
-
 function mousePressed() {
   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
     blocks[currentBlock].place();
@@ -51,7 +47,6 @@ function mousePressed() {
     frameRate(initalFrameRate + currentBlock + 1.2);
   }
 }
-
 function placedBlock() {
   if (currentBlock >= 1) {
     let block = blocks[currentBlock];
@@ -104,10 +99,10 @@ function placedBlock() {
         break;
     }
   }
-  if (currentBlock >= 14) return gameEnd();
+  if (currentBlock >= 15) return gameEnd();
   currentBlock++;
 }
-
 function gameEnd() {
+  currentBlock--;
   noLoop();
 }

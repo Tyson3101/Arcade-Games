@@ -45,4 +45,7 @@ class Block {
   moveLeft() {
     this.vx = -this.r;
   }
+  moveDown() {
+    this.y = height - this.r * this.orderTop - 1;
+  }
 }
